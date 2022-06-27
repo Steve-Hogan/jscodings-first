@@ -118,5 +118,57 @@ Note: You have to complete Split_the_String function. No need to take any input.
 };
 </pre>
 
+    
+    Count the Vowels
+You are given a string S containing both uppercase and lowercase letters. You need to find out the number of vowels in the given string.
+Note: You have to complete Count_Vowel function. No need to take any input.
+    
+<pre>
+    var Count_Vowels= (S) => 
+{
+  const vowels = S.match(/[aeiou]/gi); 
+        return vowels.length;
+};
+ 
+</pre>
+   
+    
+Find the Winner
+You are given a string S consisting of two letters A and D,
+    where each character represent the winner of N games played between Aditya and Danish, 
+    where letter A represents the win of Aditya and letter D represents the win of Danish. 
+You need to find out the that which player wins the maximum number of games or there is a draw between them.
+Note: You have to complete Game_Winner function. No need to take any input.
+    
+<pre>
+var Game_Winner = (S) => 
+    {
+      let countA = S.match(/[a]/gi).length;
+      let countD = S.match(/[d]/gi).length;
+      
+      if (countA>countD){
+        return "Aditya";
+      }else if(countD>countA){
+        return "Danish";
+      }else if(countD===countA){
+        return "Draw";
+      }
+    }
+</pre>
+    
+    
+    Plaindrome Check
+You are given a string S, Your task is to check wether the given string is a Palindrome or not.
+A Palindrome is a string, which turnout same when read in reverse direction.
+Example: "naman" is a Palindrome.
+String can contain both upppercase lowercase letters.
+Note: You have to complete Plain_Check function. No need to take any input.
+    
+<pre>
+ var Palin_Check = (str) =>
+  {
+   return (str.split("").reverse().join(""))===str?"True":"False"
+    }
+</pre>
 </body>
 </html>
