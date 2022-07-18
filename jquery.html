@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        p{
+            color: blue;
+        }
+        pre{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <p><b>Contents are shown</b></p>
+    <button>hide</button>
+    <button class="show">show</button><br><br>
+    <p>
+    //Oue.1--Create a button , on click of which you should be able to hide a paragraph text, create another button onclick of which this paragraph should be visible
+    </p>
+    <pre>
+    $("button").click(function(){
+        $("p").hide();
+    })
+    $(".show").click(function(){
+        $("p").show();
+    });
+    </pre>
+
+    <h1 id="getcontents">Get contents</h1>
+    <button class="showtext">shows text</button>
+    <p>
+    //Que.2--Create an ajax call, by using this api "https://jsonplaceholder.typicode.com/todos/12" and print the title as the heading of the pages.
+    </p>
+    <pre>
+    $(".showtext").click(function(){
+        $.ajax({
+            url : "https://jsonplaceholder.typicode.com/todos/12",
+            type : "GET",
+            success : function(data){
+                console.log(data);
+                document.getElementById("getcontents").innerText=data.title;
+            }
+    
+        })
+    })
+    </pre>
+    <script src="./jquery.js"></script>
+</body>
+</html>
