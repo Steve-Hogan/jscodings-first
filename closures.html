@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>closures</title>
+    <style>
+    pre{
+        color: red;
+    }
+    </style> </head>
+<body>
+closure example
+<pre>
+    let count = 0;
+    (function closure() {
+    if (count === 0) {
+      let count = 1;
+      console.log(count);
+    }
+    console.log(count);
+    })();
+</pre>
+
+delaying the timing inside a closure
+<pre>
+    for (var i = 0; i < 3; i++) {
+        setTimeout(function log() {
+          console.log(i);
+        }, 1000);
+      }
+</pre>
+
+ 
+
+Write a code to calculate area of a rectangle using inner function.
+<pre>
+    function area(l, b){
+        this.l = l;
+        this.area = function (){
+             this.b = b;
+             return (this.l * this.b) ;
+        };
+    };
+    var c = new area(6,5);
+    console.log('Area =', c.area());
+</pre>
+
+Take a variable in outer function and create an inner function to increase the counter every time it is called.
+
+<pre>
+    function outercounter(){
+        var counter = 0;
+    
+        function innerCounter() {
+            return counter += 1;
+        };
+    
+        return innerCounter;
+    }
+    var counter = counter();
+    alert(counter());
+    alert(counter());
+    alert(counter());
+    alert(counter());
+</pre>
+
+print output
+<pre>
+    var a = 12;
+(function () {
+  alert(a);
+})();
+</pre>
+
+print output
+<pre>
+    var a = 10;
+    var x = (function () {
+      var a = 12;
+      return function () {
+        alert(a);
+      };
+    })();
+    x();
+</pre>
+
+calling global,outer and inner functions using closures
+<pre>
+    var globalvariable = "abc";
+
+    (function outerFunction(outerArgument) {
+      var outerVariable = 'd';
+      
+      (function innerFunction(innerArgument) {
+      var innerVariable = 'e';
+      
+      console.log(
+          "outerArgument = " + "outerArgument" + "\n" +
+          "innerArgument = " + "innerArgument" + "\n" +
+          "outerVariable = " + "outerVariable" + "\n" +
+          "innerVariable = " + "innerVariable" + "\n" +
+          "globalVariable = " + "globalVariable");
+      
+      })(100);
+    })(200);
+</pre>
+</body>
