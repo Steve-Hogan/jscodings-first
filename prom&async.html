@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom manipulation</title>
+    <style>
+    pre{
+        color: red;
+    }
+    </style> 
+    </head>
+<body>
+    // Write one example explaining how you can write a callback function ?
+    <pre>
+        function a(){
+            console.log("firstly executed function");
+            setTimeout(function b(){
+                  console.log("secondly executed function");
+                    },2000);
+        };
+        a();
+    </pre>
+    
+     // Write callback function to print numbers from 1 to 7, in which 1 should be printed after 1 sec , 2 should be printed after 2 sec, 3 should be printed after 3 sec and so on. 
+     <pre>
+        function value1(){ 
+            console.log('1');
+        }
+        setTimeout(value1,1000);
+        
+        function value2(){ 
+            console.log('2');
+        }
+        setTimeout(value2,2000);
+        
+        function value3(){ 
+            console.log('3');
+        }
+        setTimeout(value3,3000);
+        
+        function value4(){ 
+            console.log('4');
+        }
+        setTimeout(value4,4000);
+        
+        function value5(){ 
+            console.log('5');
+        }
+        setTimeout(value5,5000);
+        
+        function value6(){ 
+            console.log('6');
+        }
+        setTimeout(value6,6000);
+        
+        function value7(){ 
+            console.log('7');
+        }
+        setTimeout(value7,7000);
+     </pre>
+    
+     // "Write promise function to print numbers from 1 to 7, in which 1 should be printed after 1 sec , 2 should be printed after 2 sec, 3 should be printed after 3 sec and so on. 
+     <pre>
+        let print =new Promise((resolve,reject)=>{
+         
+            setTimeout(()=>{
+                resolve(console.log("1"))
+            },1000)
+           
+        }).then( ()=> new Promise((resolve,reject)=>{
+        
+           setTimeout(()=>{
+            resolve(console.log("2"))
+           },2000)
+        
+        }) ).then( ()=> new Promise((resolve,reject)=>{
+        
+           setTimeout(()=>{
+            resolve(console.log("3"))
+           },3000)
+        
+        }) ).then(()=> new Promise((resolve,reject)=>{
+           
+            setTimeout(()=>{
+                resolve(console.log("4"))
+            },4000)
+        
+        })).then(()=> new Promise((resolve,reject)=>{
+           
+            setTimeout(()=>{
+                resolve(console.log("5"))
+            },5000)
+        })).then( ()=> new Promise((resolve,reject)=>{
+           
+            setTimeout(()=>{
+               res(console.log("6"))
+            },6000)
+        
+        })).then(()=> new Promise((resolve,reject)=>{
+            
+            setTimeout(()=>{
+                res(console.log("7"))
+                console.log("end of promises");
+            },7000)
+        }));
+     </pre>
+    
+     
+    
+     //Create a promise function accepting a argument, if yes is passed to the function then it should go to resolved state and print Promise Resolved, and if nothing is passed then it should go to reject state and catch the error and print Promise Rejected 
+     <pre>
+        const getPromise =(value) => {
+            return new Promise((resolve,reject) =>{
+             if(value =="yes"){
+                 resolve(val)
+             }else{
+                 reject("Promise Rejected")
+             }
+            })
+         }
+         getPromise("yes").then((data)=>{
+             console.log(data);
+         }).catch((err)=>{
+             console.log(err);
+         })
+     </pre>
+    
+     // example for callback
+     <pre>
+        function a(){
+            console.log("function a executed..");
+            setTimeout(function b(){ 
+                  console.log("function b executed after 2 seconds");
+            },2000);
+        };
+        a();
+     </pre> 
+     
+    //Create examples to explain callback hell function
+    <pre>
+        const shape = () => {
+            setTimeout(() => {
+                console.log("1");
+                setTimeout(() => {
+                    console.log("2");
+                    setTimeout(() => {
+                        console.log("3");
+                    }, 3000)
+                }, 2000)
+            }, 1000)
+        }
+        shape();
+    </pre>
+    
+    //Create examples to explain promises function
+    <pre>
+        const getPromise =(value) => {
+            return new Promise((resolve,reject) =>{
+             if(value =="yes"){
+                 resolve(val)
+             }else{
+                 reject("Promise Rejected")
+             }
+            })
+         }
+         getPromise("yes").then((data)=>{
+             console.log(data);
+         }).catch((err)=>{
+             console.log(err);
+         })
+     </pre>
+    
+     //Create examples to explain async await function.
+    <pre>
+        async function Result(){
+            console.log('Result');
+            let res=await Result(20);
+            return res;
+        }
+        console.log('Before calling Result')
+        let a=Result()
+        console.log('After calling Result');
+        console.log(a);
+        a.then((data)=>{
+            console.log(data);
+        })
+    </pre>
+    
+    // Create examples to explain promise.all function
+    <pre>
+        let promise1 = new Promise((resolve, reject) => {
+            resolve("sucess");
+            reject("failure");
+          });
+          let promise2 = new Promise((resolve, reject) => {
+            resolve("sucess");
+            reject("failure");
+          });
+          let promise3 = new Promise((resolve, reject) => {
+            resolve("sucess");
+            reject("failure");
+          });
+          Promise.all([promise1, promise2, promise3])
+            .then((result) => {
+              console.log(result);
+            })
+            .catch((error) => {
+              console.log(error);
+            });
+    </pre>
+    
+</body>
+</html>
