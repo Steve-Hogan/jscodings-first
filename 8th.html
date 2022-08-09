@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            color: blueviolet;
+        }
+        pre{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <p>Questtion 1</p>
+    <pre>
+        function zero(){
+            console.log("zero");
+        }
+        zero();
+    </pre>
+
+  <p>Questtion 2</p>
+    <pre>
+        function addition(a,b){
+            console.log(a+b);
+            } 
+            addition(3,4);
+    </pre>
+
+    <p>Questtion 3</p>
+    <pre>
+        const steve = (a,b)=>{
+            console.log(a-b);
+            }
+            steve(4,3);
+    </pre>
+    
+    <p>Qoestion 4</p>
+    <pre>
+        var x = 21;
+        var girl = function () {
+            console.log(x);
+            var x = 20;
+        };
+        girl ();//undefined//no value is assigned
+    </pre>
+
+    <p>Question 5</p>
+    <pre>
+        var x = 21;
+        girl ();//undefined//no value is assigned
+        console.log(x)//21
+        function girl() {
+            console.log(x);
+            var x = 20;
+        };
+    </pre>
+   
+    <p>Question 6</p>
+    <pre>
+        // var x = 21;
+        // a();//not defined//ie.not defined with var or const or let
+        // b();
+        // console.log(a);
+        // a = function() {
+        //    x = 20;
+        //   console.log(x);
+        // };
+        // b = function() {
+        //     x = 40;
+        //    console.log(x);
+        // };
+    </pre>
+
+    <p>Question 7</p>
+    <pre>
+        const factorial = (n) => {
+            let result = 1;
+            for (let i = n;i >= 1; i--) {//decrement from 3
+              result *= i;//result*decrement value
+            }
+            return result;//returns the value
+          }
+          console.log(factorial(3));//prints the result
+    </pre>
+   
+    <script src="./8th.js"></script>
+</body>
+</html>
